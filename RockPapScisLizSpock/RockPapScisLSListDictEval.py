@@ -33,9 +33,9 @@ def porovnaj(choice, wpn):
     choice = int(choice)
     result = 0
     # KAMEN 1: lose 2,5 won 3,4 # PAPIER 2: lose 3,4 won 1,5 # NOZNICE 3: lose 1,5 won 2,4
-    # JASTER 4: lose 1,3 won 2,5 # SPOCK 5: lose 2,4 won 1,3
-    lose = {1: "npc == 2 or npc == 5", 2: "npc == 3 or npc == 4", 3: "npc == 1 or npc == 5", 4: "npc == 1 or npc == 3", 5: "npc == 2 or npc == 4"}
-    won =  {1: "npc == 3 or npc == 4", 2: "npc == 1 or npc == 5", 3: "npc == 2 or npc == 4", 4: "npc == 2 or npc == 5", 5: "npc == 1 or npc == 3"}  # Dictionary key:value pair, ordered+indexed from Python 3.7
+    # JASTER 4: lose 1,3 won 2,5 # SPOCK 5: lose 2,4 won 1,3 #Altrernatívne npc in [2,5]...
+    lose = {1: "npc in [2,5]", 2: "npc in [3,4]", 3: "npc in [1,5]", 4: "npc in [1,3]", 5: "npc in [2,4]"}
+    won =  {1: "npc in [3,4]", 2: "npc in [1,5]", 3: "npc in [2,4]", 4: "npc in [2,5]", 5: "npc in [1,3]"}  # Dictionary key:value pair, ordered+indexed from Python 3.7
     print(wpn[choice-1] +":")
     if choice == npc:   # ZHODA
         print("Je to ZHODA! "+ wpn[choice-1] +" vs. "+ wpn[npc-1]+".")
